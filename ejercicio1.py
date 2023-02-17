@@ -37,17 +37,17 @@ def ordenar():
 
 
 
-def agregar_usuarioSP():
-    global usuariosSP
+def agregar_usuarioSput():
+    global usuariosSput
     name = input("Ingrese el nombre: ")
     edad = input("Ingrese la edad: ")
     phone = input("Ingrese el telefono: ")
 
-    usuariosSP[name] = edad,phone
+    usuariosSput[name] = edad,phone
 
-def listarSP():
+def listarSput():
     global usuarios
-    for user in usuariosSP:
+    for user in usuariosSput:
         print(
         """
             Nombre: {}
@@ -56,21 +56,21 @@ def listarSP():
         
         """.format(user,usuariosSP[user][0],usuariosSP[user][1]))
 
-def deleteSP(name):
+def deleteSput(name):
     global usuariosSP
     del(usuariosSP[name])
     print("Usuario eliminado")
 
-def ordenarSP():
-    global usuariosSP
-    for x in sorted(usuariosSP):
+def ordenarSput():
+    global usuariosSput
+    for x in sorted(usuariosSput):
         print(
         """
             Nombre: {}
             Edad: {}
             Telefono: {}
         
-        """.format(x,usuariosSP[x][0],usuariosSP[x][1]))
+        """.format(x,usuariosSput[x][0],usuariosSput[x][1]))
 try:
     menu = float(input("---------------------MENU-------------------------\n"
         "1.  CREAR GRUPO ARTEMIS: \n"
@@ -104,20 +104,20 @@ try:
             print(usuarios.get(name))
 
         elif menu == 2:
-            usuariosSP = {}
+            usuariosSput = {}
             print("El grupo SPUTNIK fue creado exitosamente")
         elif menu == 2.1:
-            listarSP()
+            listarSput()
         elif menu == 2.2:
-            agregar_usuarioSP()
+            agregar_usuarioSput()
         elif menu == 2.3:
             name = input("Ingrese el nombre: ")
-            deleteSP(name)
+            deleteSput(name)
         elif menu == 2.4:
-            ordenarSP()
+            ordenarSput()
         elif menu == 2.5:
             name = input("Ingrese el nombre: ")
-            print(usuariosSP.get(name))
+            print(usuariosSput.get(name))
         else:
             print("opcion no valida")
         menu = float(input("---------------------MENU-------------------------\n"
